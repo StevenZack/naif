@@ -2,9 +2,9 @@
 ***
 ## 开始使用
 <a href="https://github.com/StevenZack/naif/blob/master/README.md">English</a><br><br><br>
- 1. 在<a href="https://github.com/StevenZack/naif/releases">这里</a><br>下载工程压缩包
+ 1. 在<a href="https://github.com/StevenZack/naif/releases">这里</a>下载工程压缩包<br>
  2. 解压<br>
- 3. 用<a href="https://developer.android.com/studio/index.html">Android Studio</a><br>打开
+ 3. 用<a href="https://developer.android.com/studio/index.html">Android Studio</a>打开<br>
  4. 创建一个index.html文件，写入一下内容:<br>
 ``` html
 <html>
