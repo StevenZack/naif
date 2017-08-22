@@ -35,7 +35,9 @@ go get github.com/StevenZack/naif
 4. Cd into the project folder , and execute:<pre>go build -ldflags="-H windowsgui"</pre>
 5. Done ! you can run the output .exe file now .
 <br><br>
+
 ### <a name="linux">Linux</a>
+
 1. Download linux release <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Linux-amd64.run">here</a>
 2. Cd into the download folder , <pre>mkdir views</pre>
 3. Create a index.html at the 'views' folder we just created with blow content:
