@@ -1,8 +1,7 @@
 # Naif - Build Android App using HTML/JS/CSS
 ***
 ## Get Started
-<a href="https://github.com/StevenZack/naif/blob/master/README-zh.md">中文文档</a><br>
-***
+<a href="https://github.com/StevenZack/naif/blob/master/README-zh.md">中文文档</a><br><br><br>
  1. Download Release <a href="https://github.com/StevenZack/naif/releases">here</a><br>
  2. Uncompress it<br>
  3. Open it width <a href="https://developer.android.com/studio/index.html">Android Studio</a><br>
