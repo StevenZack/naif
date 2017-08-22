@@ -17,7 +17,7 @@
 </html>
 ```
  5. Put index.html file into the html root directory:<b>Naif/app/src/main/assets/dir/</b> (if index.html exists,it's a demo file ,overwrite it)<br>
- 6. Done ! Now you can build & run this project.<br>
+ 6. Done ! Simple as hell ,now you can build & run this project.<br>
 ***
 
 ## How it works?
@@ -25,7 +25,7 @@ It's just a webview visiting a local web server(written in Go) listened on http:
 
 ## Some APIs
 #### 1. CacheFile 
-> You can download file into local server via JavaScript
+> To solve the shortage of storaging,we offered a JavaScript Function to help you store remote file into local server
 ``` html
 <!DOCTYPE html>
 <html>
