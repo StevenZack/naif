@@ -27,7 +27,7 @@
 <br><br>
 ### <a name="windows">Windows</a>
 1. Install <a href="http://golang.org/">Go</a>
-2. Execute those command:<pre>go get github.com/lxn/walk
+2. Execute those command in CMD:<pre>go get github.com/lxn/walk
 go get github.com/akavel/rsrc
 go get github.com/StevenZack/naif
 </pre>
