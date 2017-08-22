@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <style type="text/css">
     .btn{
-      padding: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       background: #000;
       color: #fff;
     }
@@ -34,20 +37,55 @@
       width: 100%;
     }
   </style>
+  <script type="text/javascript">
+    function bao(me) {
+      if (me.options.selectedIndex==0) {
+        document.getElementById("en").style.display  = 'block'
+        document.getElementById("zh").style.display  = 'none'
+        return
+      }
+      document.getElementById("zh").style.display  = 'block'
+      document.getElementById("en").style.display  = 'none'
+    }
+  </script>
 </head>
 <body style="font-family: sans-serif;height: 100%;margin: 0px;padding: 0px;">
-<div class="flex-right header">
-  <a href="https://github.com/StevenZack/naif" class="menu-item" onmouseover="this.style.background='#ddd'" onmouseleave="this.style.background='#fff'"><b>Github</b></a>
-  <a href="https://github.com/StevenZack/naif" onmouseleave="this.style.background='#fff'" class="menu-item" onmouseover="this.style.background='#ddd'"><b>Wiki</b></a>
+  <div class="flex-right header">
+    <select onchange="bao(this)">
+      <option selected>English</option>
+      <option >简体中文</option>
+    </select>
+    <a href="https://github.com/StevenZack/naif" class="menu-item" onmouseover="this.style.background='#ddd'" onmouseleave="this.style.background='#fff'"><b>Github</b></a>
+    <a href="https://github.com/StevenZack/naif" onmouseleave="this.style.background='#fff'" class="menu-item" onmouseover="this.style.background='#ddd'"><b>Wiki</b></a>
+  </div>
+<div id="en">
+  <div class="flex-center flex-middle" style="height: 100%;padding: 30px;">
+  <div class="flex-vertical flex-center">
+    <h1 style="font-size: 100px;margin: 0px;">Naif</h1>
+    <img src="favicon.ico" width="100" height="100"><br>
+    <h1 style="color: #444;margin: 0px;">Build Android app </h1>
+    <h1 style="color: #444;margin: 0px;">using HTML/JS/CSS</h1><br><br>
+    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn"><b>Download</b></a>
+  </div>
+  </div>
 </div>
-<div class="flex-center flex-middle" style="height: 100%;padding: 30px;">
-<div class="flex-vertical flex-center">
-  <h1 style="font-size: 100px;margin: 0px;">Naif</h1>
-  <img src="favicon.ico" width="100" height="100"><br>
-  <h1 style="color: #444;margin: 0px;">Build Android app </h1>
-  <h1 style="color: #444;margin: 0px;">using HTML/JS/CSS</h1><br><br>
-  <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn"><b>Download</b></a>
+<div id="zh" style="display: none;">
+  <div class="flex-center flex-middle" style="height: 100%;padding: 30px;">
+  <div class="flex-vertical flex-center">
+    <h1 style="font-size: 100px;margin: 0px;">Naif</h1>
+    <img src="favicon.ico" width="100" height="100"><br>
+    <h1 style="color: #444;margin: 0px;">用HTML/JS/CSS </h1>
+    <h1 style="color: #444;margin: 0px;">写Android应用</h1><br><br>
+    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn"><b>下载</b></a>
+  </div>
+  </div>
 </div>
-</div>
+<script type="text/javascript">
+     var str = navigator.language
+        if (str=="zh-CN") {
+            document.getElementById("en").style.display = 'none'
+            document.getElementById("zh").style.display = 'block'
+        }
+</script>
 </body>
 </html>
