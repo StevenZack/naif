@@ -10,6 +10,7 @@
       padding-right: 30px;
       padding-top: 10px;
       padding-bottom: 10px;
+      margin-top: 10px;
       background: #000;
       color: #fff;
     }
@@ -38,8 +39,8 @@
     }
   </style>
   <script type="text/javascript">
-    function bao(me) {
-      if (me.options.selectedIndex==0) {
+    function bao() {
+      if (document.getElementById("lang").options.selectedIndex==0) {
         document.getElementById("en").style.display  = 'block'
         document.getElementById("zh").style.display  = 'none'
         return
@@ -47,11 +48,17 @@
       document.getElementById("zh").style.display  = 'block'
       document.getElementById("en").style.display  = 'none'
     }
+    function jmp(os) {
+      setTimeout("location.href='https://github.com/StevenZack/naif/blob/master/README.md#"+os+"'", 500)
+    }
+    function jmpz(os) {
+      setTimeout("location.href='https://github.com/StevenZack/naif/blob/master/README-zh.md#"+os+"'", 500)
+    }
   </script>
 </head>
-<body style="font-family: sans-serif;height: 100%;margin: 0px;padding: 0px;">
+<body style="font-family: sans-serif;height: 100%;margin: 0px;padding: 0px;" onload="bao()">
   <div class="flex-right header">
-    <select onchange="bao(this)">
+    <select id="lang" onchange="bao()">
       <option selected>English</option>
       <option >简体中文</option>
     </select>
@@ -63,9 +70,11 @@
   <div class="flex-vertical flex-center">
     <h1 style="font-size: 100px;margin: 0px;">Naif</h1>
     <img src="favicon.ico" width="100" height="100"><br>
-    <h1 style="color: #444;margin: 0px;">Build Android app </h1>
+    <h1 style="color: #444;margin: 0px;">Build cross-platform GUI </h1>
     <h1 style="color: #444;margin: 0px;">using HTML/JS/CSS</h1><br><br>
-    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn"><b>Download</b></a>
+      <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn" onclick="jmp('android')"><b>Android</b></a>
+      <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Windows-x86.7z" class="btn" onclick="jmp('windows')"><b>Windows</b></a>
+      <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Linux-amd64.run" class="btn" onclick="jmp('linux')"><b>Linux</b></a>
   </div>
   </div>
 </div>
@@ -75,8 +84,10 @@
     <h1 style="font-size: 100px;margin: 0px;">Naif</h1>
     <img src="favicon.ico" width="100" height="100"><br>
     <h1 style="color: #444;margin: 0px;">用HTML/JS/CSS </h1>
-    <h1 style="color: #444;margin: 0px;">写Android应用</h1><br><br>
-    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn"><b>下载</b></a>
+    <h1 style="color: #444;margin: 0px;">写跨平台GUI应用</h1><br><br>
+    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z" class="btn" onclick="jmpz('android')"><b>Android</b></a>
+    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Windows-x86.7z" class="btn" onclick="jmpz('windows')"><b>Windows</b></a>
+    <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Linux-amd64.run" class="btn" onclick="jmpz('linux')"><b>Linux</b></a>
   </div>
   </div>
 </div>
