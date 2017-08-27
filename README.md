@@ -73,7 +73,7 @@ chmod +x Naif-Linux-amd64.run
 
 <br><br><br>
 ## How it works?
-It's just a webview visiting a local web server(written in Go) listened on http://127.0.0.1:10246/
+It's just a webview visiting a local web server(written in Go) listened on 127.0.0.1 with random port .
 
 ## Some APIs
 #### 1. CacheFile 
