@@ -28,8 +28,8 @@ And use this style as your application theme ,  in your AndroidManifest.xml them
         android:theme="@style/AppLauch">
 </pre>
 <br>
- 6. Make your activity_main.layout like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/res/layout/activity_main.xml">activity_main.xml</a><br>
- 7. MainActivity.java like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java">MainActivity.java</a>
+ 6. Make your activity_main.layout like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/res/layout/activity_main.xml" target="_blank">activity_main.xml</a><br>
+ 7. MainActivity.java like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java" target="_blank">MainActivity.java</a>
 <br>
 8.On Android Studio, open "File>New>New Module>import .jar/.aar package>" ,  choose the .aar file we just downloaded  <br>
 9.Then add this line to your build.gradle file, and then sync project:
