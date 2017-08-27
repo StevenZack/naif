@@ -42,7 +42,7 @@ And use this style as your application theme ,  in your AndroidManifest.xml them
 go get github.com/akavel/rsrc
 go get github.com/StevenZack/naif
 </pre>
-3. Download project file <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Windows-x86.7z">here</a>, and uncompress it.
+3. Download project file <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Windows-x86.7z">here</a>, and uncompress it.<br>
 4. Cd into the project folder , and execute:<pre>go build -ldflags="-H windowsgui"</pre>
 5. Done ! you can run the output .exe file now .
 <br><br>
