@@ -49,9 +49,38 @@ go get github.com/StevenZack/naif
 <br><br>
 
 ### <a name="linux">Linux</a>
-1. 下载程序： <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Linux-amd64.run">下载</a>
-2. 进入程序所在目录 , 创建views文件夹<pre>mkdir views</pre>
-3. 在views文件夹里面创建index.html文件，并写入以下内容:
+1. 安装 <a href="http://golang.org/">Go</a>
+2. 执行以下命令:
+<pre>go get github.com/stevenzack/openurl
+go get github.com/StevenZack/naif
+</pre>
+3.创建main.go文件 YourGoProject/main.go :
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/stevenzack/naif"
+	"github.com/stevenzack/openurl"
+)
+
+func main() {
+	port := naif.Start("./views/")
+	openurl.Open("http://127.0.0.1:" + fmt.Sprintf("%v", port) + "/")
+	fmt.Print("[q]Quit , [o]Open again\n")
+	for {
+		fmt.Print(">")
+		s := ""
+		fmt.Scanf("%s", &s)
+		if s == "o" {
+			openurl.Open("http://127.0.0.1:" + fmt.Sprintf("%v", port) + "/")
+		} else if s == "q" {
+			return
+		}
+	}
+}
+```
+3. 在YourGoProject/views/文件夹里面创建index.html文件，并写入以下内容:
 ```html
 <!DOCTYPE html>
 <html>
@@ -63,16 +92,15 @@ Hello
 </body>
 </html>
 ```
-4. 然后运行Naif-Linux-amd64.run查看效果:
+4. 然后运行查看效果:
 <pre>
-chmod +x Naif-Linux-amd64.run
-./Naif-Linux-amd64.run
+go run YourGoProject/main.go
 </pre>
-> 由于Linux Webview 的兼容性问题，我们暂时无法让程序像本地应用一样运行
+> 由于Linux Webview 的兼容性问题，我们暂时无法让程序像webview一样运行
 
 
 ## 原理
-在本地http://127.0.0.1:10246/ 上运行了一个小型Web服务器，App启动时会通过WebView来访问
+在本地127.0.0.1加随机端口 上运行了一个小型Web服务器，App启动时会通过WebView来访问
 
 ## APIs
 #### 1. CacheFile 
