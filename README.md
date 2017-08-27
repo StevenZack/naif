@@ -35,6 +35,7 @@ And use this style as your application theme ,  in your AndroidManifest.xml them
 9.Then add this line to your build.gradle file, and then sync project:
 <pre> compile project(':naif')</pre>
 10.Done ! Now you can run your project<br>
+
 ### <a name="windows">Windows</a>
 1. Install <a href="http://golang.org/">Go</a>
 2. Execute those command in CMD:<pre>go get github.com/lxn/walk
