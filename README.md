@@ -15,9 +15,12 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 ```
 <br>
- 4. Create a index.html in folder "YourProjectFolder/app/src/main/assets/dir"  with some basic html content<br>
+4.On Android Studio, open "File>New>New Module>import .jar/.aar package>" ,  choose the .aar file we just downloaded  <br>
+5.Then add this line to your build.gradle file, and then sync project:
+<pre> compile project(':naif')</pre>
+ 6. Create a index.html in folder "YourProjectFolder/app/src/main/assets/dir"  with some basic html content<br>
 <br>
- 5. Add a new style (named "AppLauch") in your project res/values/styles.xml file
+ 7. Add a new style (named "AppLauch") in your project res/values/styles.xml file
 <pre>
     <style name="AppLauch">
         <item name="android:windowBackground">@mipmap/ic_launcher</item>
@@ -28,12 +31,10 @@ And use this style as your application theme ,  in your AndroidManifest.xml them
         android:theme="@style/AppLauch">
 </pre>
 <br>
- 6. Make your activity_main.layout like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/res/layout/activity_main.xml" target="_blank">activity_main.xml</a><br>
- 7. MainActivity.java like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java" target="_blank">MainActivity.java</a>
+ 8. Make your activity_main.layout like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/res/layout/activity_main.xml" target="_blank">activity_main.xml</a><br>
+ 9. MainActivity.java like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java" target="_blank">MainActivity.java</a>
 <br>
-8.On Android Studio, open "File>New>New Module>import .jar/.aar package>" ,  choose the .aar file we just downloaded  <br>
-9.Then add this line to your build.gradle file, and then sync project:
-<pre> compile project(':naif')</pre>
+
 10.Done ! Now you can run your project . Here is the <a href="https://github.com/StevenZack/naif-android-example">example project</a><br>
 
 ### <a name="windows">Windows</a>
