@@ -3,8 +3,8 @@
 ## Get Started
 <a href="https://github.com/StevenZack/naif/blob/master/README-zh.md">中文文档</a><br><br><br>
 - <a href="#android">Android</a>
-- <a href="windows">Windows</a>
-- <a href="linux">Linux</a>
+- <a href="#windows">Windows</a>
+- <a href="#linux">Linux</a>
 <br><br>
 ### <a name="android">Android</a>
 
@@ -50,9 +50,38 @@ go get github.com/StevenZack/naif
 
 ### <a name="linux">Linux</a>
 
-1. Download linux release <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-Linux-amd64.run">here</a>
-2. Cd into the download folder , <pre>mkdir views</pre>
-3. Create a index.html at the 'views' folder we just created with blow content:
+1. Install <a href="http://golang.org/">Go</a>
+2. Execute those command:
+<pre>go get github.com/stevenzack/openurl
+go get github.com/StevenZack/naif
+</pre>
+3.Create YourGoProject/main.go :
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/stevenzack/naif"
+	"github.com/stevenzack/openurl"
+)
+
+func main() {
+	port := naif.Start("./views/")
+	openurl.Open("http://127.0.0.1:" + fmt.Sprintf("%v", port) + "/")
+	fmt.Print("[q]Quit , [o]Open again\n")
+	for {
+		fmt.Print(">")
+		s := ""
+		fmt.Scanf("%s", &s)
+		if s == "o" {
+			openurl.Open("http://127.0.0.1:" + fmt.Sprintf("%v", port) + "/")
+		} else if s == "q" {
+			return
+		}
+	}
+}
+```
+3. Create a YourGoProject/views/index.html :
 ```html
 <!DOCTYPE html>
 <html>
@@ -66,10 +95,9 @@ Hello
 ```
 4. Then we can run it:
 <pre>
-chmod +x Naif-Linux-amd64.run
-./Naif-Linux-amd64.run
+go run YourGoProject/main.go
 </pre>
-> Unfortunately , we can't make Linux app native-like yet ( Due to the Linux Webview compatibility )
+> Unfortunately , we can't use webview on Linux yet ( Due to the Linux Webview compatibility )
 
 
 <br><br><br>
