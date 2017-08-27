@@ -4,33 +4,37 @@ import (
 	"fmt"
 	// download "github.com/joeybloggs/go-download"
 	"io"
+	"math/rand"
 	"net/http"
 	"os"
-	"strings"
 )
 
 var (
-	Domain    string = "127.0.0.1:10246"
-	IsRunning bool   = false
+	Port      int
+	IsRunning bool = false
 	Pkg       string
 )
 
-func Start(str string) {
+func Start(str string) int {
 	Pkg = str
-	if strings.LastIndex(str, "/") != len(str)-1 {
+	if str[len(str)-1] != '/' {
 		Pkg = str + "/"
 	}
 	if !IsRunning {
+		Port = 1500 + rand.Intn(1000)
 		go Run()
+		return Port
 	}
+	return Port
 }
 func Run() {
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir(Pkg))))
 	http.HandleFunc("/cacheFile", cacheFile)
 	http.HandleFunc("/naif.js", naif)
 	IsRunning = true
-	err := http.ListenAndServe(Domain, nil)
+	err := http.ListenAndServe("127.0.0.1:"+fmt.Sprintf("%v", Port), nil)
 	if err != nil {
+		IsRunning = false
 		fmt.Println(err)
 	}
 }
@@ -65,7 +69,7 @@ func downloadFile(url string, filename string) string {
 }
 func checkDir(str string) {
 	fmt.Println("checkDir: str=", str)
-	n := strings.LastIndex(str, "/")
+	n := lastSep(str, "/")
 	if n == len(str)-1 {
 		fmt.Println("checkDir:2")
 
@@ -80,6 +84,14 @@ func checkDir(str string) {
 	if err != nil {
 		fmt.Println(err)
 	}
+}
+func lastSep(str, sep string) int {
+	for i := len(str) - 1; i > -1; i-- {
+		if str[i] == sep[0] {
+			return i
+		}
+	}
+	return -1
 }
 func naif(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, `function cacheFile(url,path) {
