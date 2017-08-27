@@ -8,7 +8,7 @@
 <br><br>
 ### <a name="android">Android</a>
 
- 1. Download aar file <a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">here</a> ( 中国镜像下载链接<a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">下载 )</a><br>
+ 1. Download aar file <a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">here</a> ( 中国镜像下载链接<a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">下载</a> )<br>
  2. Open Android Studio , create a new project<br>
  3. Add internet permission on AndroidManifest.xml
  ```xml
@@ -34,7 +34,7 @@ And use this style as your application theme ,  in your AndroidManifest.xml them
 8.On Android Studio, open "File>New>New Module>import .jar/.aar package>" ,  choose the .aar file we just downloaded  <br>
 9.Then add this line to your build.gradle file, and then sync project:
 <pre> compile project(':naif')</pre>
-10.Done ! Now you can run your project<br>
+10.Done ! Now you can run your project . Here is the <a href="https://github.com/StevenZack/naif-android-example">example project</a><br>
 
 ### <a name="windows">Windows</a>
 1. Install <a href="http://golang.org/">Go</a>
