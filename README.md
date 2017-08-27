@@ -8,11 +8,15 @@
 <br><br>
 ### <a name="android">Android</a>
 
- 1. Download Release <a href="https://github.com/StevenZack/naif/releases/download/latest/Naif-android.7z">here</a><br>
- 2. Uncompress it<br>
- 3. Open it width <a href="https://developer.android.com/studio/index.html">Android Studio</a><br>
- 4. Create a index.html file , and write this on it:<br>
-``` html
+ 1. Download aar file <a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">here</a> ( 中国镜像下载链接<a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">下载 )</a><br>
+ 2. Open Android Studio , create a new project<br>
+ 3. Add internet permission on AndroidManifest.xml
+ ```xml
+    <uses-permission android:name="android.permission.INTERNET"/>
+```
+<br>
+ 4. Create a index.html in YourProjectFolder/app/src/main/assets/dir/ folder with content below:<br>
+ ``` html
 <html>
   <head>
   	<title></title>
@@ -21,8 +25,22 @@
     <span>hello</span>
   </body>
 </html>
-```
- 5. Put index.html file into the html root directory:<b>Naif/app/src/main/assets/dir/</b> (if index.html exists,it's a demo file ,overwrite it)<br>
+ ```
+<br>
+ 5. Add a new style (named "AppLauch") in your project res/values/styles.xml file
+ ```xml
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppLauch">
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
+    </style>
+</resources>
+ ```
+<br>
  6. Done ! Simple as hell ,now you can build & run this project.<br>
 <br><br>
 ### <a name="windows">Windows</a>
