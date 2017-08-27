@@ -96,7 +96,7 @@ func lastSep(str, sep string) int {
 func naif(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, `function cacheFile(url,path) {
 	var xhr=new XMLHttpRequest()
-	xhr.open("GET", "http://127.0.0.1:10246/cacheFile?url="+encodeURIComponent(url)+"&path="+encodeURIComponent(path))
+	xhr.open("GET", "http://127.0.0.1:`+fmt.Sprintf("%v", Port)+`/cacheFile?url="+encodeURIComponent(url)+"&path="+encodeURIComponent(path))
  	xhr.setRequestHeader("Content-Type", "Application/x-www-form-urlencoded")
 	xhr.send(null)
 }`)
