@@ -15,34 +15,26 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 ```
 <br>
- 4. Create a index.html in YourProjectFolder/app/src/main/assets/dir/ folder with content below:<br>
- ``` html
-<html>
-  <head>
-  	<title></title>
-  </head>
-  <body>
-    <span>hello</span>
-  </body>
-</html>
- ```
+ 4. Create a index.html in YourProjectFolder/app/src/main/assets/dir/ folder with baisc content<br>
 <br>
  5. Add a new style (named "AppLauch") in your project res/values/styles.xml file
- ```xml
-<resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
+<pre>
     <style name="AppLauch">
         <item name="android:windowBackground">@mipmap/ic_launcher</item>
     </style>
-</resources>
- ```
+</pre>
+And use this style as your application theme ,  in your AndroidManifest.xml theme:<br>
+<pre>
+        android:theme="@style/AppLauch">
+</pre>
 <br>
- 6. Done ! Simple as hell ,now you can build & run this project.<br>
-<br><br>
+ 6. Make your activity_main.layout like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/res/layout/activity_main.xml">activity_main.xml</a><br>
+ 7. MainActivity.java like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java">MainActivity.java</a>
+<br>
+8.On Android Studio, open "File>New>New Module>import .jar/.aar package>" , android choose the .aar file we just downloaded  <br>
+9.Then add this line to your build.gradle file, and then sync project:
+<pre> compile project(':naif')</pre>
+10.Done ! Now you can run your project<br>
 ### <a name="windows">Windows</a>
 1. Install <a href="http://golang.org/">Go</a>
 2. Execute those command in CMD:<pre>go get github.com/lxn/walk
