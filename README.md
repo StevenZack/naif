@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 ```
 <br>
- 4. Create a index.html in YourProjectFolder/app/src/main/assets/dir/ folder with baisc content<br>
+ 4. Create a index.html in folder "YourProjectFolder/app/src/main/assets/dir"  with some basic html content<br>
 <br>
  5. Add a new style (named "AppLauch") in your project res/values/styles.xml file
 <pre>
