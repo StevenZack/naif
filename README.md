@@ -35,7 +35,7 @@ And use this style as your application theme ,  in your AndroidManifest.xml them
  9. MainActivity.java like this <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java" target="_blank">MainActivity.java</a>
 <br>
 
-10.Done ! Now you can run your project . Here is the <a href="https://github.com/StevenZack/naif-android-example">example project</a><br>
+10.Done ! Now you can run your project . If you're still confused , Here is the <a href="https://github.com/StevenZack/naif-android-example">example project</a><br>
 
 ### <a name="windows">Windows</a>
 1. Install <a href="http://golang.org/">Go</a>
