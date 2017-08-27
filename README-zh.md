@@ -9,23 +9,33 @@
 <br><br>
 ### <a name="android">Android</a>
 
- 1. 在<a href="https://github.com/StevenZack/naif/releases">这里</a>下载工程压缩包<br>
- 2. 解压<br>
- 3. 用<a href="https://developer.android.com/studio/index.html">Android Studio</a>打开<br>
- 4. 创建一个index.html文件，写入一下内容:<br>
-``` html
-<html>
-  <head>
-  	<title></title>
-  </head>
-  <body>
-    <span>hello</span>
-  </body>
-</html>
+  1. 下载.aar文件 <a href="https://github.com/StevenZack/naif/releases/download/latest/naif-android.aar">下载</a> <br>
+ 2. 打开Android Studio ,新建一个项目<br>
+ 3. 在 AndroidManifest.xml里面添加联网权限
+ ```xml
+    <uses-permission android:name="android.permission.INTERNET"/>
 ```
- 5. 把这个文件放入html根目录:<b>Naif/app/src/main/assets/dir/</b> (里面有一个我写好的样例文件，删掉它就好)<br>
- 6. OK ! 就这么简单，你现在可以导出或者运行这个工程<br>
-<br><br>
+<br>
+4.在Android Studio里面，依次打开菜单"File>New>New Module>import .jar/.aar package>" ,  选择我们刚刚下载好的.aar文件 <br>
+5.然后在build.gradle里面添加一行如下代码，然后sync一下:
+<pre> compile project(':naif')</pre>
+ 6. 在"YourProjectFolder/app/src/main/assets/dir"目录下创建一个index.html文件，并写入基本的hello world内容<br>
+<br>
+ 7. 在 res/values/styles.xml 文件中添加一个新的style,名为“AppLauch":
+<pre>
+    <style name="AppLauch">
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
+    </style>
+</pre>
+并在AndroidManifest.xml中使用这个style:<br>
+<pre>
+        android:theme="@style/AppLauch">
+</pre>
+<br>
+ 8. 把你的activity_main.layout改成这种：<a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/res/layout/activity_main.xml" target="_blank">activity_main.xml</a><br>
+ 9. MainActivity.java 改成类似这样的 <a href="https://github.com/StevenZack/naif-android-example/blob/master/app/src/main/java/io/github/naife/stevenzack/myapplication/MainActivity.java" target="_blank">MainActivity.java</a>
+<br>
+10.OK !你现在可以运行该项目了 . 如有不懂，请看示例 <a href="https://github.com/StevenZack/naif-android-example">example project</a><br>
 
 ### <a name="windows">Windows</a>
 1. 安装<a href="http://golang.org/">Go</a>
